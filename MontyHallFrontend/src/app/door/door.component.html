@@ -1,0 +1,7 @@
+<div class="door" (click)="selectDoor()">
+  <ng-container *ngIf="!revealed">🚪</ng-container>
+  <ng-container *ngIf="revealed">
+    <span *ngIf="prize === 'car'">🚗</span>
+    <span *ngIf="prize === 'goat'">🐐</span>
+  </ng-container>
+</div>
