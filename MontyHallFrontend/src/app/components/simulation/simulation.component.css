@@ -1,0 +1,120 @@
+/* Simulation Section */
+.simulation {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  min-width: 500px;
+  min-height: 400px;
+}
+
+/* Header */
+.simulation h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+/* Number input */
+.simulation input[type="number"] {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  width: 80px;
+  text-align: center;
+}
+
+/* Toggle */
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  border-radius: 24px;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #28a9ff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.toggle-label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+}
+
+/* Buttons */
+button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #72dde6;
+  color: #000;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #ffc107;
+}
+
+/* Chart container */
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin-top: 20px;
+}
+
+/* Win percentage */
+.simulation-result p {
+  font-weight: 600;
+  margin-top: 10px;
+  font-size: 1rem;
+}

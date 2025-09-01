@@ -1,28 +1,30 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MontyHallComponent } from './monty-hall/monty-hall.component';
-import { DoorComponent } from './door/door.component';
-import { ResultComponent } from './result/result.component';
-import { HistoryComponent } from './history/history.component';
-import { GameComponent } from './game/game.component';
+import { MontyHallComponent } from './components/monty-hall/monty-hall.component';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SimulationComponent } from './components/simulation/simulation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MontyHallComponent,
-    DoorComponent,
-    ResultComponent,
-    HistoryComponent,
-    GameComponent
+    SimulationComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

@@ -1,0 +1,28 @@
+<div class="simulation">
+  <h2>Simulate Multiple Games</h2>
+
+  <p>
+    Number of Simulations:
+    <input type="number" [(ngModel)]="numberOfSimulations">
+  </p>
+
+  <div class="toggle-container">
+    <label class="switch">
+      <input type="checkbox" [(ngModel)]="switchDoorSimulation">
+      <span class="slider"></span>
+    </label>
+    <span class="toggle-label">{{ switchDoorSimulation ? 'Switch Door' : 'Stay' }}</span>
+  </div>
+
+  <button (click)="startSimulation()">Start Simulation</button>
+
+  <div *ngIf="simulationResult" class="simulation-result">
+    <p>
+      Win Percentage: 
+      {{((simulationResult.wins / (simulationResult.wins + simulationResult.losses)) * 100).toFixed(2)}}%
+    </p>
+    <div class="chart-container">
+      <canvas id="simulationChart" height="300"></canvas>
+    </div>
+  </div>
+</div>
