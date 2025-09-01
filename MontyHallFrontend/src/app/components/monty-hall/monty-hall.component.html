@@ -1,0 +1,41 @@
+<div class="game-container">
+  <h1 class="title">Monty Hall Game</h1>
+
+  <div class="content">
+    <!-- Left Side: Single Game -->
+    <div class="single-game">
+      <h2>Play Single Game</h2>
+
+      <div class="doors">
+        <div 
+          class="door" 
+          *ngFor="let door of doors"
+          [class.selected]="chosenDoor === door"
+          (click)="chosenDoor = door">
+          <span>{{ door }}</span>
+        </div>
+      </div>
+
+      <!-- Toggle Button for Single Game -->
+      <div class="toggle-container">
+        <label class="switch">
+          <input type="checkbox" [(ngModel)]="switchDoorSingle">
+          <span class="slider"></span>
+        </label>
+        <span class="toggle-label">{{ switchDoorSingle ? 'Switch Door' : 'Stay' }}</span>
+      </div>
+
+      <!-- Play button triggers the game -->
+      <button (click)="playGame(chosenDoor || 1)">Play</button>
+
+      <div *ngIf="gameResult" class="result-box">
+        <p>Door Opened by Host: {{gameResult.revealedDoor}}</p>
+        <p>Switched: {{switchDoorSingle ? 'Yes' : 'No'}}</p>
+        <p>Result: <strong>{{gameResult.win ? 'You Won!' : 'You Lost!'}}</strong></p>
+      </div>
+    </div>
+
+    <!-- Right Side: Simulation Component -->
+    <app-simulation></app-simulation>
+  </div>
+</div>
