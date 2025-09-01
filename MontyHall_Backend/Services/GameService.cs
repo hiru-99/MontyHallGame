@@ -56,6 +56,26 @@ public class GameService
         }
     }
 
+    public async Task<(int Wins, int Losses, int Total)> SimulateAsync(int numberOfGames, bool didSwitch)
+{
+    if (numberOfGames <= 0)
+        throw new ArgumentException("Number of games must be greater than zero.");
+
+    int wins = 0, losses = 0;
+
+    for (int i = 0; i < numberOfGames; i++)
+    {
+        int selectedDoor = _random.Next(1, 4);
+        var game = await PlayAsync(selectedDoor, didSwitch);
+
+        if (game.Win) wins++;
+        else losses++;
+    }
+
+    return (wins, losses, numberOfGames);
+}
+
+
     public async Task<List<Game>> GetAllGamesAsync()
     {
         try

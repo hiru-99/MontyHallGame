@@ -62,4 +62,32 @@ public class MontyHallController : ControllerBase
             return StatusCode(500, "An error occurred while retrieving all games.");
         }
     }
+
+    [HttpPost("simulate")]
+public async Task<IActionResult> Simulate([FromQuery] int numberOfGames, [FromQuery] bool didSwitch)
+{
+    try
+    {
+        var (wins, losses, total) = await _gameService.SimulateAsync(numberOfGames, didSwitch);
+
+        var simulationDto = new SimulationResultDto
+        {
+            TotalGames = total,
+            Wins = wins,
+            Losses = losses,
+            WinPercentage = (double)wins / total * 100
+        };
+
+        return Ok(simulationDto);
+    }
+    catch (ArgumentException ex)
+    {
+        return BadRequest(ex.Message);
+    }
+    catch (Exception)
+    {
+        return StatusCode(500, "An error occurred while running simulations.");
+    }
+}
+
 }
