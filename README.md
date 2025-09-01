@@ -26,3 +26,43 @@ A web application to play the Monty Hall game and simulate multiple games to ana
 - **HTTP Client:** Angular HttpClient
 
 ---
+
+## Backend Setup
+1. Clone the repository:
+```
+git clone https://github.com/hiru-99/MontyHallGame.git
+```
+2. Navigate to the backend folder
+```
+cd MontyHall_Backend
+```
+3. Restore dependencies
+```
+dotnet restore
+```
+4. Run the backend API
+```
+dotnet run
+```
+The backend will start on http://localhost:5278/api/MontyHall
+
+## Frontend Setup
+
+1. Open a new terminal and navigate to the frontend folder
+```
+cd MontyHall_Frontend
+```
+2. Install dependencies
+```
+npm install
+```
+3. Run the Angular application
+```
+ng serve --open
+```
+
+The frontend will open in your browser at http://localhost:4300
+   
+
+
+
