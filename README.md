@@ -50,7 +50,7 @@ The backend will start on http://localhost:5278/api/MontyHall
 
 1. Open a new terminal and navigate to the frontend folder
 ```
-cd MontyHall_Frontend
+cd MontyHallFrontend
 ```
 2. Install dependencies
 ```
