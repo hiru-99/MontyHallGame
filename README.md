@@ -58,7 +58,7 @@ npm install
 ```
 3. Run the Angular application
 ```
-ng serve --open
+ng serve
 ```
 
 The frontend will open in your browser at http://localhost:4300
